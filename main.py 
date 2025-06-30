@@ -1,0 +1,17 @@
+import ffmpeg
+
+def extract_audio(video_path, output_wav):
+    ffmpeg.input(video_path).output(output_wav, acodec='pcm_s16le', ar=44100, ac=2).run()
+
+
+#General idea for inner working of audio analysis
+
+#Divide video up into equal small segments.
+
+#transcribe each segment of small video.
+
+#Use third party llm like ollama 2.0 to piece together which video clips/segments to keep
+# and which ones to edit out.
+
+#Piece together the final video. THis is likely for vlogging or other similar 
+#type sof videos 
